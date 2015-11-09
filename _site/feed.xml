@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>francescodelduchetto lecture&#39;s notes</title>
-    <description>This website contains my lecture&#39;s notes (oh what a surprise!) while I&#39;m attending the master course in &#39;&#39;Artificial Intelligence and Robotics&#39;&#39; at Sapienza University (Rome). I&#39;m doing this only as an incentive to review the contents of the lectures just after each class. So, it could happens that I stop at any time, because I&#39;ll become bored of this or because I&#39;ll decide to cram for my exams!</description>
-    <link>google.com/</link>
-    <atom:link href="google.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 09 Nov 2015 23:14:39 +0100</pubDate>
-    <lastBuildDate>Mon, 09 Nov 2015 23:14:39 +0100</lastBuildDate>
+    <title>Your awesome title</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+    <link>http://yourdomain.com/</link>
+    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 09 Nov 2015 23:27:40 +0100</pubDate>
+    <lastBuildDate>Mon, 09 Nov 2015 23:27:40 +0100</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -26,8 +26,8 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
 
 </description>
         <pubDate>Mon, 09 Nov 2015 23:08:06 +0100</pubDate>
-        <link>google.com/jekyll/update/2015/11/09/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">google.com/jekyll/update/2015/11/09/welcome-to-jekyll/</guid>
+        <link>http://yourdomain.com/jekyll/update/2015/11/09/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/11/09/welcome-to-jekyll/</guid>
         
         
         <category>jekyll</category>

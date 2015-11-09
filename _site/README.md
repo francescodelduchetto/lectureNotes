@@ -1,2 +1,0 @@
-# lectureNotes
-My lecture notes

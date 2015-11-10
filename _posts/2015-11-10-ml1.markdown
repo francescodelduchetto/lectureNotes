@@ -1,0 +1,44 @@
+---
+layout: post
+title: "Machine Learning - Introduction"
+categories: machine_learning
+---
+
+Machine learning is the study and construction of algorithms that are able
+to learn from example data or past experience.
+
+### Well-posed learning problem
+
+If the learning problem is **well posed** then: 
+
+*a computer program is said to **learn** from **experience E** with respect to
+a **class of tasks T** and **performance measure P** if its performance at tasks 
+**T**, as measured by **P**, improves with experience **E**.*
+
+### Example of learning problems
+
+* [Collaborative FIltering](https://en.wikipedia.org/wiki/Collaborative_filtering)
+* [Imitation learning in video games](http://www.theguardian.com/technology/2014/oct/14/ai-research-artificial-intelligence-game-characters)
+* [Spam filtering](http://www.wired.com/2015/07/google-says-ai-catches-99-9-percent-gmail-spam/)
+* Cheque reading
+
+### Programming with data
+We are searching for an **adaptive**, **robust** and **fault tolerant** 
+system. In order 
+to obtain this we need to go through some automated learning mechanism because
+the *rule-based* implementations are:
+
+* difficult to program
+* brittle, because it miss many edge-cases
+* difficult to mantain
+* often doesn't work well (e.g. OCR)
+
+Problem prototypes
+-------------------
+
+<a href="https://www.youtube.com/watch?v=qDbpYUbf3e0" target="_blank">Supervised and Un-supervised Learning (Computerphile)</a>
+
+### Supervised Learning
+
+
+$$y = f(x)$$

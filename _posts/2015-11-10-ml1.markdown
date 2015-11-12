@@ -17,7 +17,7 @@ a **class of tasks T** and **performance measure P** if its performance at tasks
 
 ### Example of learning problems
 
-* [Collaborative FIltering](https://en.wikipedia.org/wiki/Collaborative_filtering)
+* [Collaborative Filtering](https://en.wikipedia.org/wiki/Collaborative_filtering)
 * [Imitation learning in video games](http://www.theguardian.com/technology/2014/oct/14/ai-research-artificial-intelligence-game-characters)
 * [Spam filtering](http://www.wired.com/2015/07/google-says-ai-catches-99-9-percent-gmail-spam/)
 * Cheque reading
@@ -30,15 +30,77 @@ the *rule-based* implementations are:
 
 * difficult to program
 * brittle, because it miss many edge-cases
-* difficult to mantain
+* difficult to maintain
 * often doesn't work well (e.g. OCR)
 
-Problem prototypes
--------------------
+## Problem prototypes
 
-<a href="https://www.youtube.com/watch?v=qDbpYUbf3e0" target="_blank">Supervised and Un-supervised Learning (Computerphile)</a>
+* <a href="https://www.youtube.com/watch?v=qDbpYUbf3e0" target="_blank">[Video] Supervised and Un-supervised Learning (Computerphile)</a>
+
+* <a href="https://www.youtube.com/watch?v=oTtow2Ui8vg" target="_blank">[Video] Generative vs Discriminative models</a>
 
 ### Supervised Learning
-
-
+Using a supervised learning mechanism we can infer a function from **labeled 
+training data:**
+ 
 $$y = f(x)$$
+
+The training data consist of **training examples**. Each training example
+is a pair consisting of an **input vector** and a desired **output value**.
+
+Examples of supervised learning algorithms:
+
+* **Binary classification**. Given $$x$$ find $$y$$ in $$\{-1, 1\}$$.
+
+<img src="http://mlpy.sourceforge.net/docs/3.5/_images/lda_binary.png" width="500">
+
+* **Multiclass classification**. Given $$x$$ find $$y$$ in $$\{1, \dots k\}$$.
+
+<img src="http://mlpy.sourceforge.net/docs/3.2/_images/liblinear1.png" width="500">
+
+* **Regression**. Given $$x$$ find $$y$$ in $$\mathbb{R}$$ (or $$\mathbb{R}^d$$).
+
+<img src="http://mlpy.sourceforge.net/docs/3.5/_images/ridge.png" width="500">
+
+In order to measure how well a function fits the training data, we can define a 
+**loss function**  $$l(y, f(x))$$.
+
+### Unsupervised Learning
+The unsupervised learning algorithms try to find **hidden structures** in 
+**unlabeled data**. Since the training example are unlabeled, there is **no 
+loss function** that we can specify to evaluate a potential solution.
+
+Examples of unsupervised learning algorithms:
+
+* **Clustering**. Find a set of prototypes representing the data.
+
+<img src="https://qph.is.quoracdn.net/main-qimg-fdddb9c42555a7aa80acd82fab6c73a5?convert_to_webp=true" width="600">
+
+* **Principal components**. Find a subspace representing the data.
+
+<img src="http://www.nlpca.org/fig_pca_principal_component_analysis.png" width="600">
+
+### Discriminative Models
+
+The discriminate models are used to express the dependence of an unobservable 
+variable $$y$$ on an observable variable $$x$$. This is done modelling the 
+**conditional probability distribution** $$P(y \vert x)$$, which can be used for 
+predicting $$y$$ from $$x$$.
+
+This approach often offer better convergence and simpler solution to the problem.
+
+### Generative Models
+
+The generative model is fully probabilistic, in such that it can be used to 
+*generate* values of any variable in the model, whereas a discriminative model
+allows only sampling of the target variables conditional on the observed quantities.
+
+It estimate the **joint distribution** $$P(x, y)$$, from which we can infer 
+$$P(y\vert x)$$.
+
+Using this approach we need to observe the data and to estimate the distribution
+of the data. It is good for missing variables and it's easy to add prior knowledge
+about data.
+
+
+

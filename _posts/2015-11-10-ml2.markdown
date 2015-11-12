@@ -1,0 +1,93 @@
+---
+layout: post
+title: "Machine Learning - Basic Statistics"
+categories: machine_learning
+---
+
+Essential tools for data analysis.
+
+## Probabilites
+
+### Sample Space
+
+**Def**: *A sample space $$\Omega$$ is the set of all possible outcomes of a 
+random experiment.*
+
+$$\Omega$$ can be finite or infinite.
+
+Examples:
+
+1. The set of all possible outcomes of a dice roll. $$\Omega = \{1,2,3,4,5,6\}$$.
+2. Pages of a book opened randomly. $$\Omega = \{1,2,\dots n_{pages}\}$$.
+3. Real numbers for temperature, location, time, etc. $$\Omega \in \mathbb{R}$$.
+
+### Events
+
+**Def**: *An event $$A$$ is a **subset** of the sample space $$\Omega$$.*
+
+$$A$$ can be finite or infinite.
+
+Examples:
+
+1. \\( A = \\{1,2,3,4\\} \\)
+2. $$A =$$ *"Book open at an odd number page"*
+3. \\(a \leq A \leq b;a \in \mathbb{R}, b \in \mathbb{R}\\)
+
+### Probability
+
+**Def**: *A probability $$P(A)$$ is the chance that the event $$A$$
+happens. $$P(A)$$ is a function that maps the event $$A$$ onto the interval $$[0,1]$$.*
+
+It can be viewed as the **ratio** of the subspace $$A$$ over the entire space
+of events $$\Omega$$.
+
+### Kolmogorov Axioms
+
+1. Non-negativity: $$P(A) \geq 0$$ for each $$A$$ event.
+2. Unit measure: \\(P(\Omega) = 1 \\).
+3. $$\sigma$$-additivity: For disjoint sets (events) $$A_i$$, we have
+$$P(\cup^{\infty}_{i=1} A_i) = \sum^{\infty}_{i=1} P(A_i)$$.
+
+Consequences:
+
+* \\(P(\emptyset) = 0\\)
+* \\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\\)
+* \\(P(A^c) = 1 - P(A)\\)
+
+### Random Variables
+
+**Def**: A real valued random variable $$X$$ is a **function** of the outcome of a 
+randomized experiment
+
+$$X : \Omega \rightarrow \mathbb{R}$$
+
+- $$P(a < X < b) \doteq P(\omega : a < X(\omega) < b)$$
+- $$P(X = a) \doteq P(\omega : X(\omega) = a)$$
+
+## Discrete Distributions
+
+### Bernoulli distribution: $$Ber(p)$$
+The Bernoulli distribution is the probability distribution of a random variable
+which takes the value $$1$$ with success probability of $$p$$ and the value $$0$$
+with failure probability of $$1-p$$.
+
+$$ \Omega = \{ \omega_1, \omega_2\} \quad X(\omega_1) = 1 \quad X(\omega_2) = 0$$
+
+$$P(X = a) = P(\omega : X(\omega) = a) = 
+\begin{cases}
+	p, &\quad \text{if } a=1\\
+	1-p, &\quad \text{if } a=0\\
+\end{cases}$$
+
+### Binomial distribution: $$Bin(n, p)$$
+The Binomial distribution is the discrete probability distribution of the 
+number of successes in a sequence of $$n$$ independent Bernoulli experiment.
+
+$$ \Omega = \{\text{possible } n\text{-long } \omega_1/\omega_2 \text{ series}\}, \vert\Omega\vert = 2^n\\
+K(\omega) = \text{number of }\omega_1 \text{ in } \omega \in \Omega$$
+
+$$P(K=k) = P(\omega : K(\omega)=k)= \displaystyle\sum_{\omega :K(\omega)=k} p^k (1-p)^{n-k} = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+## Continuous Distributions
+
+

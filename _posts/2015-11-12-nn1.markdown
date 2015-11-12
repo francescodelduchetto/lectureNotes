@@ -1,0 +1,107 @@
+---
+layout: post
+title: "Neural Network - 1"
+categories: neural_network
+---
+
+A neural network is basically a realization of a non-linear mapping from 
+$$\mathbb{R}^I$$ to $$\mathbb{R}^K$$
+
+$$f_{NN} : \mathbb{R}^I \rightarrow \mathbb{R}^K$$
+
+where $$I$$ and $$K$$ are respectively the dimension of the **input** and 
+the **output** space (dimension of the realtive vectors). 
+
+
+## The Perceptron
+
+An artificial neuron (AN) implements a non-linear mapping from $$\mathbb{R}^I$$
+ususally to $$[0,1]$$ or $$[-1,1]$$, depending on the activation function
+used. That is, e.g.
+
+$$f_{AN} : \mathbb{R}^I \rightarrow [0,1]$$
+
+An AN receives a vector of $$I$$ input signals, $$x = (x_1, x_2, \dots x_I)$$
+either from the environment or from other ANs. To each input signal $$x_i$$
+is associated a **weight** $$w_i$$ that strengthen or deplete the input signal.
+The AN computes the net input signal, and uses an **activation function** $$f_{AN}$$
+to compute the output signal, $$y$$, given the net input.
+The strenght of the output signal is further influenced by a treshold value,
+$$\Theta$$, also referred to as the **bias**
+
+### Calculating the Net Input Signal
+
+The net input signal to an AN is usually computed as the weighted sum of
+all the input signals
+
+$$net = \displaystyle\sum^{I}_{i=1} x_i w_i$$
+
+### Activation Functions
+
+The function $$f_{AN}$$ receives the net input signal and the bias, and 
+determines the output of the neuron. Different types of activation functions 
+can be used. The most common used are:
+
+1. **Linear fuction**
+
+	$$f_{AN}(net - \Theta) = \lambda(net- \theta)$$
+
+	where $$\lambda$$ is the **slope** of the function.
+2. **Step function**
+
+	$$f_{AN}(net - \Theta) = \begin{cases}
+		\gamma_1, &\quad \text{if } net \geq \Theta\\
+		\gamma_2, &\quad \text{if } \less \Theta\\
+	\end{cases}$$
+
+	The step function produce two scalar output values, $$\gamma_1$$ or 
+	$$\gamma_2$$. Usually they assume the values $$1$$ and $$0$$, or $$1$$ 
+	and $$-1$$.
+3. **Sigmoid function**
+	
+	$$f_{AN}(net - \Theta) = \frac{1}{1+e^{-\lambda (net-\theta)}$$
+	
+	The sigmoid fucntion is a continuous function that lies in the range $$(0,1)$$.
+	The parameter $$\lambda$$ controls the stepness of the function.
+4. **Hyperbolic tangent**
+
+	$$f_{AN}(net - \Theta) = \frac{e^{\lambda (net-\theta)}-e^{-\lambda (net-\theta)}}
+	{e^{\lambda (net-\theta)}+e^{-\lambda (net-\theta)}}$$
+	
+	or also approximated as 
+	
+	$$f_{AN}(net - \Theta) = \frac{2}
+	{e^{\lambda (net-\theta)}+e^{-\lambda (net-\theta)}} - 1$$
+	
+	The output of the hyperbolic tangent is in the range $$(-1,1)$$.
+5. **Gaussian function**
+
+	$$f_{AN}(net- \theta) = e^{-(net-\theta)^2/\theta^2}$$
+	
+	where $$net-\Theta$$ is the **mean** and $$\theta$$ is the standard
+	deviation of the *Gaussian distribution*.
+
+## AN Geometry
+
+Single neurons can be used to realize linearly separable functions without 
+any error. **Linera separability means that the neuron can separate the 
+space of $$I$$-dimensional input vectors yielding an above-threshold response
+from those having a below-threshold response by an $$I$$-dimensional [hyperplane(aggiungere link!)](#1).
+The hyperplane separates the input vectors for which $$\sum_i x_i w_i - \Theta \gre 0$$
+grom the input vectors for which $$\sum_i x_i w_i - \Theta \les 0$$.
+
+Given the input signal and a value for $$\Theta$$, the weights values $$w_i$$,
+can easily be calculated by solving 
+
+$$wX = \Theta$$
+
+where $$X$$ is the matrix of input patterns as given in the truth tables. !!!!images!!!
+
+An example of linear function that is not linearly saparable is the XOR. A
+single perceptron cannot implement this function. To be able to learn functions 
+that are not linearly separable we need to use a **layered NN** of several neurons.
+
+## Artificial Neuron Learning
+
+For very simple problem is easy to find by hand some values for $$w$$ and $$\Theta$$ 
+such that the AN yielsds

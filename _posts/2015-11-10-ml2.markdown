@@ -91,3 +91,16 @@ $$P(K=k) = P(\omega : K(\omega)=k)= \displaystyle\sum_{\omega :K(\omega)=k} p^k 
 ## Continuous Distributions
 
 
+
+
+
+
+
+
+
+
+
+## Parameter Estimation:
+**Def**: *Evaluating how will the model fits the observed data*. 
+
+

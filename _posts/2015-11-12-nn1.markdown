@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Neural Network - 1"
+title: "Neural Network - The Perceptron"
 categories: neural_network
 ---
 
@@ -104,4 +104,15 @@ that are not linearly separable we need to use a **layered NN** of several neuro
 ## Artificial Neuron Learning
 
 For very simple problem is easy to find by hand some values for $$w$$ and $$\theta$$ 
-such that the AN yielsds
+such that the AN yields the desired output. But we want to find an automated
+approach that allows us to determine these values also in cases where no prior
+knowledge about the target output exists. Here comes to help the **learning** 
+paradigm. Basically a learning algorithm adjusts the weight and the bias values
+until several criteria are satisfied.
+
+There are three main types of learning:
+
+* [Supervised learning](/lectureNotes/machine_learning/2015/11/10/ml1/#supervised)
+* [Unsupervised learning](/lectureNotes/machine_learning/2015/11/10/ml1/#unsupervised)
+* **Reinforcement learning**: the aim is to reward the neuron for good performance
+and to penalize the neuron for bad performance.

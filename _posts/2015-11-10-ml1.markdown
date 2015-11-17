@@ -23,10 +23,10 @@ a **class of tasks T** and **performance measure P** if its performance at tasks
 * Cheque reading
 
 ### Programming with data
-We are searching for an **adaptive**, **robust** and **fault tolerant** 
+We are searching for an adaptive, robust and fault tolerant 
 system. In order 
 to obtain this we need to go through some automated learning mechanism because
-the *rule-based* implementations are:
+*rule-based* implementations are:
 
 * difficult to program
 * brittle, because it miss many edge-cases
@@ -35,11 +35,11 @@ the *rule-based* implementations are:
 
 ## Problem prototypes
 
-* <a href="https://www.youtube.com/watch?v=qDbpYUbf3e0" target="_blank">[Video] Supervised and Un-supervised Learning (Computerphile)</a>
+* <a href="https://www.youtube.com/watch?v=qDbpYUbf3e0" target="_blank">[Video] Supervised and Unsupervised Learning (Computerphile)</a>
 
 * <a href="https://www.youtube.com/watch?v=oTtow2Ui8vg" target="_blank">[Video] Generative vs Discriminative models</a>
 
-### Supervised Learning
+### Supervised Learning {#supervised} 
 Using a supervised learning mechanism we can infer a function from **labeled 
 training data:**
  
@@ -65,7 +65,7 @@ Examples of supervised learning algorithms:
 In order to measure how well a function fits the training data, we can define a 
 **loss function**  $$l(y, f(x))$$.
 
-### Unsupervised Learning
+### Unsupervised Learning {#unsupervised}
 The unsupervised learning algorithms try to find **hidden structures** in 
 **unlabeled data**. Since the training example are unlabeled, there is **no 
 loss function** that we can specify to evaluate a potential solution.
@@ -82,7 +82,7 @@ Examples of unsupervised learning algorithms:
 
 ### Discriminative Models
 
-The discriminate models are used to express the dependence of an unobservable 
+The discriminate models are used to express the dependence of an un-observable 
 variable $$y$$ on an observable variable $$x$$. This is done modelling the 
 **conditional probability distribution** $$P(y \vert x)$$, which can be used for 
 predicting $$y$$ from $$x$$.

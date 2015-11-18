@@ -103,4 +103,7 @@ $$P(K=k) = P(\omega : K(\omega)=k)= \displaystyle\sum_{\omega :K(\omega)=k} p^k 
 ## Parameter Estimation:
 **Def**: *Evaluating how will the model fits the observed data*. 
 
+## Decision Theory:
+*Motivaion*:
+Suppose we have an input value x together with a corresponding vector t of target variables, and our goal is to predict t given a new value of x. For regression problems , t will comprimise continuous variables, wherease for classification problems t will represent class labels.
 

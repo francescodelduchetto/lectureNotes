@@ -4,39 +4,37 @@ title: "Machine Learning - PCA"
 categories: machine_learning
 ---
 
-#**Principle Component Analysis (PCA)**
-
-##*Motivation*:
+### *Motivation*
 It's hard to visualize and correlate data with high dimensions ($$>3$$ dimensions). So PCA is used to reduce the data dimesnions that keeps most of the information about the original data.
 
-##**PCA**:
+### PCA
 Orthogonal projection of the data onto a lower-dimension linear space that;
 
 - Maximizes the variance of the projected data
 - Minimizes the mean square difference between the data points and the projections 
 
-##**PCA Applications**:
+### PCA Applications
 - Data Visulaization
 - Data Compression
 - Noise Reduction
 
-##**PCA Vectors**:
+### PCA Vectors
 find $$k$$ vectors $$u_1, u_2,\dots, u_k$$ onto which to project the data, so as to minimize the projection error.
 
 - Originate from the center of mass.
 - Principle component 1 points in the direction of the largest variance.
 - Each subsequent principle component is orthogonal to the previous ones, and points in the directions of largest variance of the residual subspace.
 
-##**PCA Algorithm**:
+### PCA Algorithm
 - *Given*: Training set: $$x^1, x^2,\dots, x^n$$ 
 - *Goal*: Reduce data from $$n$$-dimensions to $$k$$-dimensions 
 - Preprocessing (Mean normalization and feature scaling if needed):
 	1. Mean normalization steps:
 		- Calculate the mean of data $$\Rightarrow \frac{1}{m} \displaystyle\sum_{i=0}^{m=k} x_i $$ 
 		- Subtract the mean from each column vector $$x_i$$ in the data matrix
-	2. Calculate the covariance matrix $$\Rightarrow \Sigma = \frac{1}{m} \sum_{i=1}^{n} (x^i) * (x^i)^T $$
-	3. Extract U from [u,s,v] = svd $$\Sigma$$ using Matlab or Octave.	
-	4. Take the first *k* principle component vectors (eigen vectors) from the matrix U. 
+	2. Calculate the covariance matrix `sigma` $$\Rightarrow \Sigma = \frac{1}{m} \sum_{i=1}^{n} (x^i) * (x^i)^T $$
+	3. Extract $$U \in \mathbb{R}^{nxn}$$ from `[u,s,v] = svd(sigma)` using Matlab or Octave.	
+	4. Take the first *k* principle component vectors (eigen vectors) from the matrix $$U$$. 
 	 	
 
  

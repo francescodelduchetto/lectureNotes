@@ -1,0 +1,65 @@
+---
+layout: post
+title: "Machine Learning - MLE"
+categories: machine_learning
+---
+
+Given the data $$D = (x_1, \dots, x_n), x_i \in \mathbb{R}^d$$
+assume a  set of distributions $$\{p_\theta : \theta \in \Theta \}$$ on $$\mathbb{R}^d$$.
+
+Assume $$D$$ is a sample from $$X_1, \dots , X_n \sim p_\theta$$, *indipendent and
+identically distribuited* random variables for the same $$\theta \in \Theta$$. 
+
+### Goal
+We want to estimate the true value of $$\theta$$ the data $$D$$ comes from.
+
+Because in real applications there is not a "true" value for $$\theta$$, we are
+searching for value that more probably reprensents our data $$D$$.
+
+### Definition
+$$\theta_{MLE}$$ is a **MLE** for $$\theta$$ if 
+
+$$\theta_{MLE} =\underset{\theta \in \Theta}{argmax} \: p(D \mid \theta)$$
+
+or, more precisely, 
+$$p(D \mid \theta_{MLE})= \underset{\theta \in \Theta}{max} \: p(D\mid \theta)$$.
+
+
+$$p(D \mid \theta) = p(x_1, \dots, x_n \mid \theta) = \displaystyle\prod_{i=1}^{n} 
+p(x_i \mid \theta) = \displaystyle\prod_{i=1}^{n} P(X_i = x_i \mid \theta)$$. 
+
+### Remark
+* The MLE it might not be unique.
+* The MLE may fail to exists.
+
+### Pros
+* Easy to compute
+* Intuitive interpretation
+* Asymptotic properties
+	+ [Consistent](https://en.wikipedia.org/wiki/Consistent_estimator) (as $$n\rightarrow \infty$$ it converges to the "true" value of $$\theta$$)
+	+ [Normal](https://en.wikipedia.org/wiki/Estimator#Asymptotic_normality) (central limit theorem)
+	+ [Efficient](https://en.wikipedia.org/wiki/Efficiency_(statistics)) (is the best possible estimate of $$\theta$$)
+* Invariant under reparametrization ( $$ g(\theta_{MLE})$$ is a MLE for $$g(\theta)$$)
+
+### Cons
+* Is a [point estimate](https://en.wikipedia.org/wiki/Point_estimation), so has
+no rapresentation of uncertainty
+* Can overfit
+* Existence and uniqueness are not guaranteed.
+
+## MLE for Gaussian mean and variance
+Choose $$\theta = (\mu, \sigma^2)$$ that maximizes the probability of observed data.
+
+$$\theta_{MLE} =\underset{\theta \in \Theta}{argmax} \: p(D \mid \theta)$$
+
+$$ =\underset{\theta \in \Theta}{argmax} \: \displaystyle\prod_{i=1}^{n} P(X_i \mid \theta)$$
+
+$$ =\underset{\theta \in \Theta}{argmax} \: \displaystyle\prod_{i=1}^{n} \frac{1}{2\sigma^2}e^{-(X_i-\mu)^2/2\sigma^2}$$
+
+$$ =\underset{\theta \in \Theta}{argmax} \: \frac{1}{2\sigma^2}e^{-\frac{1}{2\sigma^2}\sum_{i=1}^{n}(X_i-\mu)^2}$$
+
+From here we obtain 
+
+$$\mu_{MLE} = \frac{1}{n}\displaystyle\sum_{i=1}^{n} x_i$$
+
+$$\sigma_{MLE}^2 = \frac{1}{n}\displaystyle\sum_{i=1}^{n} (x_i - \mu)^2$$

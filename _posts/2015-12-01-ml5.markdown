@@ -1,0 +1,40 @@
+---
+layout: post
+title: "Machine Learning - MAP"
+categories: machine_learning
+---
+
+Given the data $$D = (x_1, \dots, x_n), x_i \in \mathbb{R}^d$$
+assume a **joint distribution** $$p(D, \theta)$$.
+
+Assume $$D$$ is a sample from $$X_1, \dots , X_n \sim p_\theta$$, *indipendent and
+identically distribuited* random variables for the same $$\theta \in \Theta$$. 
+
+### Goal
+Choose a good value of $$\theta$$ for $$D$$.Rather than estimating a single
+$$\theta$$, we obtain a distribution over possible values of $$\theta$$.
+
+### Definition
+$$\theta_{MAP}$$ is a **MAP** for $$\theta$$ if 
+
+$$\theta_{MAP} =\underset{\theta \in \Theta}{argmax} \: p(\theta \mid D)$$
+
+From the Bayes theorem:
+
+$$P(\theta \mid D) = \frac{P(D \mid \theta) P(\theta)}{P(D)} \propto P(D \mid \theta) P(\theta)$$
+
+* $$P(\theta \mid D)$$ is the posterior distribution on $$\theta$$ given the
+data $$D$$
+* $$P(D \mid \theta)$$ is the likelihood function
+* $$P(\theta)$$ is the prior distribution.
+
+### Pros
+* Easy to compute and interpretable 
+* Avoid overfitting
+* As $$n \rightarrow \infty$$ tends to looks like the MLE (remember that the MLE has some 
+nice asymptotic properties, that the MAP does not have)
+
+### Cons
+* Being a [point estimate](https://en.wikipedia.org/wiki/Point_estimation) has no representation of uncertainty of $$\theta$$
+* Not invariant under reparametrization (unlike MLE)
+* You have to do assume the prior on $$\theta$$. 

@@ -96,7 +96,7 @@ The generative model is fully probabilistic, in such that it can be used to
 allows only sampling of the target variables conditional on the observed quantities.
 
 It estimate the **joint distribution** $$P(x, y)$$, from which we can infer 
-$$P(y\vert x)$$.
+$$P(y\vert x)$$ by applying the Bayes Rule.
 
 Using this approach we need to observe the data and to estimate the distribution
 of the data. It is good for missing variables and it's easy to add prior knowledge

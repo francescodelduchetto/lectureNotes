@@ -6,7 +6,7 @@ layout: default
   <header class="post-header">
 	{% assign post = page %}
 	{% if post.categories.size > 0 %}
-		{% capture cats_content %}Posted in {% if post.categories.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
+		{% capture cats_content %}Posted in{% if post.categories.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
 		{% for post_cat in post.categories %}
 			{% for data_cat in site.data.categories %}
 				{% if data_cat.slug == post_cat %}
@@ -24,6 +24,7 @@ layout: default
 
 	<p id="post-meta">{{ cats_content }}</p>
 	
+	</br>
     <h1>{{ page.title }}</h1>
     <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>

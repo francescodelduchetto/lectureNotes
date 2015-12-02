@@ -2,7 +2,7 @@
 title: My lecture notes
 email: francescodelduchetto@gmail.com
 description: "Here I write the notes of the lectures I'm attending during the master course in 'Artificial Intelligence and Robotics' at Sapienza University (Rome)."
-baseurl: "/lectureNotes"
+#~ baseurl: "/lectureNotes"
 url: ""
 github_username:  francescodelduchetto
 

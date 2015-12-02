@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Neural Network - The Perceptron"
-categories: neural_network
+categories: neural_networks
 ---
 
 A neural network is basically a realization of a non-linear mapping from 

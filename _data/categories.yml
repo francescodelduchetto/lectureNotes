@@ -1,0 +1,15 @@
+- slug: machine_learning
+  name: Machine Learning
+  color: '#00A1FF'
+
+- slug: neural_networks
+  name: Neural Networks
+  color: '#FF448D'
+  
+- slug: robotics_1
+  name: Robotics I
+  color: '#FF4A29'
+  
+- slug: ai_1
+  name: Artificial Intelligence I
+  color: '#00BA11'

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Artificial Intelligence 1 - Agents"
-categories: artificial_intelligence
+categories: ai_1
 ---
 
 ## Agents and Environments

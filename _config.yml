@@ -9,3 +9,7 @@ github_username:  francescodelduchetto
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+# Sitemap
+gems:
+  - jekyll-sitemap

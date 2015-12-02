@@ -4,8 +4,15 @@ layout: default
 
 <div class="home">
 
-  <h1>Posts</h1>
+ <h1>Select by category</h1>
+ {% for data_cat in site.data.categories %}
+	<a href="/blog/categories/{{data_cat.slug}}/">{{ data_cat.name }}&nbsp;&nbsp;</a>
+ {% endfor %}
 
+	
+<!--
+  <h1>Posts</h1>
+-->
   <ul class="posts">
     {% for post in site.posts %}
       <li>

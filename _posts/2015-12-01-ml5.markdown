@@ -11,7 +11,7 @@ Assume $$D$$ is a sample from $$X_1, \dots , X_n \sim p_\theta$$, *indipendent a
 identically distribuited* random variables for the same $$\theta \in \Theta$$. 
 
 ### Goal
-Choose a good value of $$\theta$$ for $$D$$.Rather than estimating a single
+Choose a good value of $$\theta$$ for $$D$$. Rather than estimating a single
 $$\theta$$, we obtain a distribution over possible values of $$\theta$$.
 
 ### Definition

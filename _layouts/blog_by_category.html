@@ -1,8 +1,11 @@
 ---
 layout: default
 ---
-
-<h1>Articles by category : {{ page.category }}</h1>
+{% for data_cat in site.data.categories %}
+	{% if data_cat.slug == page.category %}
+		<span>Articles by category :</span> <span style="background-color:{{data_cat.color}}">{{ data_cat.name }}</span>
+	{% endif %}
+{% endfor %}
 <div>
 	<ul class="posts">
 		{% if site.categories[page.category] %}

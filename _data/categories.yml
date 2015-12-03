@@ -1,15 +1,15 @@
 - slug: machine_learning
   name: Machine Learning
-  color: '#00A1FF'
+  color: '#BFF5C2'
 
 - slug: neural_networks
   name: Neural Networks
-  color: '#FF448D'
+  color: '#CFDAF1'
   
 - slug: robotics_1
   name: Robotics I
-  color: '#FF4A29'
+  color: '#FCCDCD'
   
 - slug: ai_1
   name: Artificial Intelligence I
-  color: '#00BA11'
+  color: '#FFF7BC'

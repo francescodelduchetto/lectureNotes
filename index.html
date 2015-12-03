@@ -6,7 +6,10 @@ layout: default
 
  <p>Select by category</p>
  {% for data_cat in site.data.categories %}
-	<a href="/lectureNotes/blog/categories/{{data_cat.slug}}/">{{ data_cat.name }}&nbsp;&nbsp;</a>
+	<span  style="background-color:{{data_cat.color}}">
+		<a href="/lectureNotes/blog/categories/{{data_cat.slug}}/" style="color: black">{{ data_cat.name }}</a>
+	</span>
+	&nbsp;
  {% endfor %}
 
 	
@@ -18,7 +21,7 @@ layout: default
     {% for post in site.posts %}
       <li>
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}" >{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>

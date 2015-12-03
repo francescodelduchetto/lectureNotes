@@ -415,15 +415,15 @@ a:visited { color: #205caa; }
 table{
     border-collapse: collapse;
     border-spacing: 100;
-    border:1px solid #000000;
+    border:1px solid #BFBFBF;
 }
 
 th{
-    border:1px solid #000000;
+    border:1px solid #BFBFBF;
     padding:4px;
 }
 
 td{
-    border:1px solid #000000;
-    padding:1px;
+    border:1px solid #BFBFBF;
+    padding:6px;
 }

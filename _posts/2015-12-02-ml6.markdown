@@ -1,0 +1,93 @@
+---
+layout: post
+title: "Machine Learning - Decision Theory"
+categories: machine_learning
+---
+
+Given some data $$D = (x_1, \dots, x_n), x_i \in \mathbb{R}^d$$ we want 
+to be able to decide for each observation $$x_i$$ to which of the possible 
+$$\omega_i \in \Omega$$ classes it belongs.
+
+> Think, as an example, at the problem of email classification. We want to
+> separate the spam emails from the "ham" emails. 
+> In this case $$x_i$$ is the text of the $$i^{th}$$ email and $$\Omega = \{spam, ham\}$$.
+
+We call **true state of nature** the class to which $$x_i$$ is more probable
+to belong.
+
+So, in case we have two classes ($$\Omega = \{\omega_1, \omega_2\}$$), decide that:
+
+* if $$P(\omega_1 \mid x_i) > P(\omega_2 \mid x_i) \Rightarrow$$  true state
+of nature $$= \omega_1$$
+* if $$P(\omega_1 \mid x_i) < P(\omega_2 \mid x_i) \Rightarrow$$  true state
+of nature $$= \omega_2$$
+
+Therefore, whenever we observe a particular $$x_i$$, the probability of 
+**error** is:
+
+* $$P(error \mid x_i) = p(\omega_1 \mid x_i)$$ if we classify $$x_i$$ as $$\omega_2$$
+* $$P(error \mid x_i) = p(\omega_2 \mid x_i)$$ if we classify $$x_i$$ as $$\omega_1$$
+
+In order to **minimize the error** we should classify $$x_i$$ as belonging to 
+the true state of nature (the class with the greater probability).
+
+$$P(error \mid x_i) = min [P(\omega_1 \mid x_i), P(\omega_2 \mid x_i)]$$  
+
+### Loss function
+A more general way to do classification is to use a loss function.
+This approach allows to take actions upon each observation and not only to
+decide the true state of nature. So we can refuse to make a decision (the 
+action of not deciding a class).
+
+#### Definition
+Let $$\Omega = \{\omega_1, \dots,\omega_c\}$$ be the set of $$c$$ states 
+of nature (or categories).
+Let $$A = \{\alpha_1, \dots, \alpha_a\}$$ be the set of $$a$$ possible 
+actions.
+
+The **loss** incurred for taking the action $$\alpha_i$$ when the state 
+of nature is $$\omega_j$$ is:
+
+$$L(\alpha_i \mid \omega_j)$$
+
+> Resuming the previous example, we can specify
+> a loss function associated to a matrix that specify for each possible 
+> couple of $$\alpha_i$$ and $$\omega_j$$ the relative loss value:
+>
+>
+> $${}_{\alpha}\backslash^{\omega}$$ | spam | ham
+>---------------------------|------|-----
+> **spam**                  | 0    | 100
+> **ham**                   | 1    | 0
+> 
+>
+> * The loss of choosing **spam** when the state is **ham** is $$L(spam \mid ham) = 100$$
+> (classifing a "good" email as spam is a very wrong action)
+> * Classifing a **spam** as **ham** is a wrong action, but not so much. $$L(ham \mid spam) = 1$$
+> * Classifing correctly an email has zero loss. $$L(ham \mid ham) = L(spam \mid spam) = 0$$.
+
+### Risk or Expected Loss
+To decide the best action to make we want to minimize the expected loss
+carried out by our choice or, to put in other words, we want to choose the less 
+risky action.
+
+#### Definition
+The risk of choosing the action $$\alpha_i$$ on the observation $$x$$ is:
+
+$$R(\alpha_i \mid x) = \displaystyle\sum_{j=1}^{c} L(\alpha_i \mid \omega_j) P(\omega_j \mid x)$$
+
+We want to find the value $$\alpha_{min}$$ that minimizes the risk:
+
+$$\alpha_{min} = \underset{\alpha_i \in A}{argmin} \: \displaystyle\sum_{j=1}^{c} L(\alpha_i \mid \omega_j) P(\omega_j \mid x)$$
+
+> In the email classification problem we calculate now the expected losses
+> in the case we decide for spam and in the other case:
+>
+> * $$\alpha = spam$$, $$R(spam \mid x) = (L(spam \mid spam) + L(spam \mid ham)) P(spam \mid x) = 100 P(spam \mid x)$$
+> * $$\alpha = ham$$, $$R(ham \mid x) = (L(ham \mid spam) + L(ham \mid ham)) P(ham \mid x) = 1 P(ham \mid x)$$
+>
+> We can say nothing about which one is the less risky, because we don't know 
+> the value of $$P(\omega \mid x)$$, and we don't know $$\omega$$ (the true value).
+
+To estimate the value of $$P(\omega \mid x)$$ we can use several approaches as the
+[MLE](/lectureNotes/machine_learning/2015/12/01/ml4/) or the [MAP](/lectureNotes/machine_learning/2015/12/01/ml5/).

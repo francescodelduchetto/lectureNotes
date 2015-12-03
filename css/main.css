@@ -408,3 +408,22 @@ a:visited { color: #205caa; }
     margin: 0 0 15px; }
 
 }
+
+/*
+ * For table borders
+*/
+table{
+    border-collapse: collapse;
+    border-spacing: 100;
+    border:1px solid #000000;
+}
+
+th{
+    border:1px solid #000000;
+    padding:4px;
+}
+
+td{
+    border:1px solid #000000;
+    padding:1px;
+}
